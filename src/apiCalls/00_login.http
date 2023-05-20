@@ -1,0 +1,63 @@
+### api info
+
+GET http://localhost:3000/ HTTP/1.1
+
+### correct login
+POST http://localhost:3000/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "almir",
+    "password": "Teacher.1"
+}
+
+### wrong login
+POST http://localhost:3000/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "almir",
+    "password": "wrongpassword"
+}
+
+### empty login
+POST http://localhost:3000/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "",
+    "password": ""
+}
+
+### register a new user
+POST http://localhost:3000/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "lazy",
+    "password": "Student.1"
+}
+
+### change password of a user
+POST http://localhost:3000/changepassword HTTP/1.1
+content-type: application/json
+
+{
+    "username": "almir",
+    "oldpassword": "Teacher.1",
+    "newpassword": "Nerd.1"
+}
+
+### test new password
+POST http://localhost:3000/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "almir",
+    "password": "Nerd.1"
+}
+
+### get all user data
+GET http://localhost:3000/getuserlist HTTP/1.1
+
+###########################################################

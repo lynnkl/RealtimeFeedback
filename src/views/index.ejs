@@ -1,0 +1,42 @@
+<%- include ("_partial/_header.ejs"); %>
+<div class="container h-auto">
+    <div class="vh-100 align-items-center justify-content-center">
+        <div class="row h-100 align-items-center justify-content-center" id="prompt">
+            <div class="col">
+                <div class="panel-default">
+                <div class="row">
+                    <h1 class="">
+                        <!-- TODO css & content -->
+                        RealtimeFeedback
+                    </h1>
+                </div>
+                <div class="row">
+                    <p class="">
+                        <!-- TODO css & content -->
+                        RealtimeFeedback: Die ultimative Web-App für lebendigen Unterricht! <br> <br> RealtimeFeedback ist Ihre neue beste Freundin, wenn es darum geht, in Echtzeit Feedback zu geben und Ihre Schülerinnen und Schüler zu begeistern.
+                    </p>
+                </div>
+
+                <% if(currentUser == null)  { %>
+                    <div class="row">
+                        <a href="/login" id="btn-home" class="btn btn-primary">Login</a>
+                        <a href="/register" class="btn btn-light">Registrieren</a>
+                    </div>
+                <% } %>
+
+                <% if(currentUser != null)  { %>
+                    <div class="row">
+                        <a href="/realtimefeedback" id="btn-feedback" class="btn btn-primary">Feedback</a>
+                    </div>
+                <% } %>
+
+                </div>
+            </div>
+            <div class="col">
+                <h1 class="text-center">
+                    <!-- TODO delete this container -->
+                </h1>
+            </div>
+        </div>
+    </div>
+    <%- include ("_partial/_footer.ejs"); %>

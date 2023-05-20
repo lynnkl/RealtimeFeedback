@@ -1,0 +1,98 @@
+body{
+    background-image: url("../img/main-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+.logo {
+    height: 35px;
+    width: auto;
+    display: block;
+}
+
+.form-control:hover{
+    color: #4938AD !important;
+    outline: 3px solid #4938AD !important;
+    outline-offset: -3px;
+    
+}
+
+.currentPage a {
+    color: #9380ff !important;
+}
+
+.panel-default{
+    padding: 50px;
+    border-radius: 15px;
+    background-color: hsla(210, 50%, 97%, 0.7);
+}
+
+.pt-5{
+    padding: 50px;
+    background-color: hsla(210, 50%, 97%, 0.7);
+}
+
+.caption.course-caption.pt-3.pb-3{
+    padding: 3rem;
+}
+
+.caption.course-caption.pt-3.pb-3 p{
+    margin-bottom: 0;
+}
+
+.caption{
+    height: auto;
+    overflow-wrap: break-word;
+    margin: 10px 0px 10px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.card.h-100{
+    border-radius: 10px;
+}
+
+#course-captions {
+    height: 75vh;
+}
+
+.course-caption {
+    transition: background-color 0.3s ease;
+}
+  
+.course-caption:hover {
+    cursor: pointer;
+    background-color: #CCD4DB;
+}
+
+.btn-primary {
+    background-color: #4938AD !important;
+    border-color: #4938AD !important;
+}
+
+.star-filled, .star-empty{
+    color:  #4938AD !important;
+}
+
+#btn-home{
+    margin-right: 15px;
+}
+
+.feedbackContainer{
+    max-height: 50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.footer{
+    background-color:#4938AD;
+    padding: 5px 0px 5px 0px;
+    text-align: center;
+    color: white;
+}
+
+.footer p{
+    margin: 0;
+}

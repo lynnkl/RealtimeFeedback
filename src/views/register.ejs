@@ -1,0 +1,70 @@
+<%- include('_partial/_header'); -%>
+<div class="container h-auto">
+
+<div class="vh-100 d-flex align-items-center justify-content-center">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Registrieren</h3>
+        </div>
+        <br>
+        <div class="panel-body">
+            <form class="form-signin" method="POST" action="/register">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Username" name="username" pattern=".{3,}" title="Username muss mindestens 3 Zeichen enthalten." required>
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="email" class="form-control" placeholder="E-mail" name="email" title="Bitte eine E-mail angeben." required>
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Passwort" required>
+                </div>
+                <br />
+                <div class="input-group">
+                    <input type="password" name="repassword" id="repassword" class="form-control" placeholder="Passwort wiederholen" required>
+                </div>
+                <br />
+                <input type="submit" class="btn btn-primary navbar-btn" value="Registrieren" onclick="validatePassword(event)"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function validatePassword(event) {
+        var passwordInput = document.getElementById("password");
+        var repasswordInput = document.getElementById("repassword");
+        var password = passwordInput.value;
+        var repassword = repasswordInput.value;
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{12,}$/; // Muss min. 1 kleinbuchstabe, 1 grossbuchstabe, 1 zahl und 12 Zeichen enthalten
+        const isValid = regex.test(password);
+
+        if(!isValid) {
+            passwordInput.setCustomValidity("Passwort muss min. 12 Zeichen, darunter 1 Grossbuchstabe, 1 Kleinbuchstabe und 1 Zahl enthalten.");
+        } else {
+            passwordInput.setCustomValidity("");
+        }
+
+        if(!passwordInput.reportValidity()) {
+            event.preventDefault();
+            return;
+        }
+
+        const isSame = password === repassword;
+
+        if(!isSame) {
+            repasswordInput.setCustomValidity("Passwort muss übereinstimmen.");
+        } else {
+            repasswordInput.setCustomValidity("");
+        }
+
+        if(!repasswordInput.reportValidity()) {
+            event.preventDefault();
+        }
+    }
+
+</script>
+
+<%- include('_partial/_footer'); -%>

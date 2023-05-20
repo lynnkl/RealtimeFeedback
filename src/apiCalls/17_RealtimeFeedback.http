@@ -1,0 +1,22 @@
+### 
+GET http://localhost:3000/realtimefeedback/getall HTTP/1.1
+
+### 
+GET http://localhost:3000/realtimefeedback/detail/lesson2 HTTP/1.1
+
+### 
+GET http://localhost:3000/realtimefeedback/template HTTP/1.1
+
+### 
+POST http://localhost:3000/realtimefeedback/addone HTTP/1.1
+content-type: application/json
+
+{
+    "name": "lesson3",
+    "data": {
+        "feedback": "kein roter Faden",
+		"rating": "2"
+    }
+}
+
+###########################################################
