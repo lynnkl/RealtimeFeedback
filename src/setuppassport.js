@@ -29,7 +29,7 @@ module.exports = function() {
             
 
             if (!user) {
-                req.flash("error", "Keine Benutzer mit dieser Mail.");
+                req.flash("error", "Keine Benutzer mit dieser E-Mail.");
                 
                 return done(null, false);
             }

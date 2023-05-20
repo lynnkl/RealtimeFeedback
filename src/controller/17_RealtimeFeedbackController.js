@@ -5,10 +5,8 @@
 // 04.05.2022 @ BBBaden
 //
 
-// import feedback model from separate directory
+// importiert model für feedback
 const Feedback = require("../models/feedback");
-
-// TODO review commented code and delete or keep
 
 const data = {
 	lesson1: [
@@ -56,24 +54,6 @@ module.exports = {
 			console.log(err);
 		}
 
-		/*
-		try {
-			const allElements = [];
-
-			for (const element in data) allElements.push({ [element]: data[element] });
-
-			res.json({
-				err: false,
-				elements: allElements,
-			});
-		} catch (error) {
-			console.error(error);
-			res.json({
-				err: true,
-				msg: "server error",
-			});
-		}
-		*/
 	},
 
 	async getOneDetail(req, res) {
@@ -117,28 +97,5 @@ module.exports = {
 			res.redirect("/realtimefeedback");
 		}
 
-		/*
-		try {
-			if (data[req.body.name]) {
-				// data[req.body.name] = req.body.data;
-				data[req.body.name].push(req.body.data);
-				res.json({
-					err: false,
-					msg: "rating added",
-				});
-			} else {
-				data[req.body.name] = [req.body.data];
-				res.json({
-					err: false,
-					msg: "rating added",
-				});
-			}
-		} catch (error) {
-			console.error(error);
-			res.json({
-				err: true,
-				msg: "server error, could not addonenew element",
-			});
-		} */
 	},
 };

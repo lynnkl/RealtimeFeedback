@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="row feedbackContainer">
-                <!--List all the feedback-->
+                <!--Listet alle feedbacks-->
                 <% feedbacks.forEach(function(feedback) { %>
                     <div class="col-sm-4 col-md-4 feedback-card pb-5" data-course-id="<%= feedback.class %>">
                         <div class="card h-100">
@@ -66,56 +66,28 @@
         <div class="col-3 d-flex flex-column justify-content-center" id="course-captions">
             <div class="caption course-caption pt-3 pb-3">
                 <h3 class="course-title">Mathe</h3>
-                <!-- TODO Change content -->
                 <p><b>Herr Schmidt</b> | Raum 203 | Montag, 8:00 - 9:30 Uhr</p>
             </div>
             <div class="caption course-caption pt-3 pb-3">
                 <h3 class="course-title">Deutsch</h3>
-                <!-- TODO Change content -->
                 <p><b>Frau Davis</b> | Raum 115 | Dienstag, 10:00 - 11:30 Uhr</p>
             </div>
             <div class="caption course-caption pt-3 pb-3">
                 <h3 class="course-title">Englisch</h3>
-                <!-- TODO Change content -->
                 <p><b>Herr Müller </b> | Raum 305 | Mittwoch, 13:00 - 14:30 Uhr</p>
             </div>
             <div class="caption course-caption pt-3 pb-3">
                 <h3 class="course-title">Wirtschaft</h3>
-                <!-- TODO Change content -->
-                <p> <b>Frau Ki</b> | Raum 212 | Donnerstag, 11:00 - 12:30 Uhr</p>
+                <p><b>Frau Ki</b> | Raum 212 | Donnerstag, 11:00 - 12:30 Uhr</p>
             </div>
             <div class="caption course-caption pt-3 pb-3">
                 <h3 class="course-title">ICT</h3>
-                <!-- TODO Change content -->
                 <p><b>Herr Wagner</b> | Raum 402 | Freitag, 14:00 - 15:30 Uhr</p>
             </div>
         </div>
         <div class="col-1"></div>
     </div>
 
-    <script>
-        // Dom manipulation
-        const captions = document.querySelectorAll('.course-caption');
-        const feedbackCards = document.querySelectorAll('.feedback-card');
-
-        captions.forEach((caption) => {
-            caption.addEventListener('click', () => {
-                const selectedCourseTitle = caption.firstElementChild.innerHTML;
-                const targetTitle = document.getElementById('classContent');
-                targetTitle.value = selectedCourseTitle;
-                const filteredFeedbacks = Array.from(feedbackCards).filter((card) => card.dataset.courseId === selectedCourseTitle);
-                updateFeedbackSection(filteredFeedbacks);
-            });
-        });
-
-        function updateFeedbackSection(filteredFeedbacks) {
-            const feedbackContainer = document.querySelector('.feedbackContainer');
-            feedbackContainer.innerHTML = '';
-
-            filteredFeedbacks.forEach((feedback) => {
-                feedbackContainer.appendChild(feedback);
-            });
-        }
-    </script>
+    <script src="/scripts/feedback.js"></script>
 
     <%- include ("_partial/_footer.ejs"); %>

@@ -18,13 +18,14 @@ var passport = require("passport");
 var session = require("express-session");
 var flash = require("connect-flash");
 
-// import params from separate file
+// importiert datenbank-parameter aus einer separaten datei
 var params = require("./params");
 
 var setUpPassport = require("./setuppassport");
 
 var ensureAuthenticated = require("./authentication/auth").ensureAuthenticated;
 
+//mongoose modul aus node.js stellt verbindung zu MongoDB her
 mongoose.connect(params.DBCONNECTION, { useUnifiedTopology: true, useNewUrlParser: true });
 setUpPassport();
 
@@ -63,8 +64,7 @@ app.get("/", (req, res) => {
 
 app.get("/info", (req, res) => {
 	res.send({
-		// TODO Author ändern
-		Author: "Almir Ajradini",
+		Author: "Lynn Klinkhammer",
 		Name: "LB MM291",
 		Company: "BBBaden",
 	});
@@ -94,20 +94,7 @@ app.get("/logout", (req, res) => {
 	app.post("/login", loginController.login);
 	app.post("/register", loginController.register);
 
-	// TODO review commented code to delete or keep
-
-	/*
-	app.get("/register", (req, res) => {
-		res.json({
-			user: "some free username",
-			password:
-				"your super secret password. I swear to god I can't read your password after I have encrypted it.",
-		});
-	});
 	
-
-	app.get("/getuserlist", loginController.getuserlist);
-	*/
 }
 
 // ========================================= 17 Realtime_Feedback =============================================
@@ -120,7 +107,6 @@ app.get("/realtimefeedback/detail/:id", realtimeFeedbackController.getOneDetail)
 app.get("/realtimefeedback/template", realtimeFeedbackController.getTemplate);
 
 // ======================================== Start Server ======================================================
-
 
 
 app.listen(port, () => {
