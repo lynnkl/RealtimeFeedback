@@ -28,7 +28,7 @@
                                 <a href="/" class="nav-link">Welcome <%= currentUser.username %>!</a>
                             </li>
                             <li id="feedback-link-nav" class="nav-item">
-                                <a href="/realtimefeedback" class="nav-link"><b>Feedback</b></a>
+                                <a href="/realtimefeedback" class="nav-link">Feedback</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/logout" class="nav-link">Log Out</a>
@@ -66,17 +66,14 @@
         <script>
             function highlightCurrentPage() {
                 const currentPage = window.location.pathname;
-                console.log("Currently on " + currentPage);
 
                 if(currentPage === "/") {
                     const navElement = document.getElementById("home-link-nav");
                     if (navElement != null) {
                         
                         navElement.classList.add('currentPage');
-                        console.log("I got It!! " + navElement)
                     }
                 } else if(currentPage === "/login") {
-                    console.log("Correctly identified: " + currentPage);
                     document.getElementById("login-link-nav").classList.add('currentPage');
                 } else if(currentPage === "/register") {
                     document.getElementById("register-link-nav").classList.add('currentPage');

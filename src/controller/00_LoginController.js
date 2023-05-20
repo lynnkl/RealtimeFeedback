@@ -14,8 +14,8 @@ const loginDB = {
 
 const express = require("express");
 var passport = require("passport");
+// importiert custom model für passport und user
 var setUpPassport = require("../setuppassport");
-// import user model from separate directory
 var User = require("../models/user");
 setUpPassport();
 const app = express();

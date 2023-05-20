@@ -5,9 +5,8 @@
 // 04.05.2022 @ BBBaden
 //
 
-// import feedback model from separate directory
+// importiert model für feedback
 const Feedback = require("../models/feedback");
-
 
 const data = {
 	lesson1: [

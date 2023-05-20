@@ -15,7 +15,8 @@ userSchema.pre("save", function(done){
     if(!user.isModified("password")) {
         return done();
     }
-
+    
+//passwort verschlüsselung
     bcrypt.genSalt(SALT_FACTOR, (err, salt) => {
         if (err) {
             return done(err);
